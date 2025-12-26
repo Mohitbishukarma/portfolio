@@ -7,21 +7,36 @@
     <link rel="stylesheet" href="./css/blog.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/028c27c31f.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <h2>Mohit <span>BK.</span></h2>
+    <!-- Navigation backdrop for mobile -->
+    <div class="nav-backdrop"></div>
+
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Site header with navbar only -->
+    <header class="site-header">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <h2 aria-label="Home">Mohit <span>BK.</span></h2>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <ul class="navigation">
-                <a class="nav-item" href="./index.html"><li>Portfolio</li></a>
-                <button id="theme"><i class="fa-solid fa-moon"></i>Dark</button>
+                <li><a class="nav-item" href="./index.html">Portfolio</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+
+    <!-- Main content wrapper -->
+    <main id="main-content" class="main-content">
         <a href="./blog-detailed.html">
             <div class="blog-preview-container">
                 <div class="blog-preview-body">
@@ -53,7 +68,7 @@
                 <div class="blog-preview-body">
                     <h3>📝</h3>
                     <div>
-                        <strong>Dhy use Django as a backend technology?</strong>
+                        <strong>Why use Django as a backend technology?</strong>
                         <br>
                         <small>6 min read</small>
                     </div>
@@ -259,61 +274,61 @@
     </main>
 
     <script>
+        // Mobile Menu Toggle with Backdrop and ARIA
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navigation = document.querySelector('.navigation');
+        const navBackdrop = document.querySelector('.nav-backdrop');
+        const navItems = document.querySelectorAll('.nav-item');
+        const progressBar = document.querySelector('.scroll-progress-bar');
+        const navbar = document.querySelector('.navbar');
 
-        function setTheme(theme) {
-            if (theme === 'light') {
-                let lightPrimaryColor = getComputedStyle(document.documentElement).getPropertyValue('--light-primary-color');
-                let lightSecondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--light-secondary-color');
-                let lightFontColorShade = getComputedStyle(document.documentElement).getPropertyValue('--light-font-color-shade');
-                let lightFontColor = getComputedStyle(document.documentElement).getPropertyValue('--light-font-color');
-                
-                document.documentElement.style.setProperty('--primary-color', lightPrimaryColor);
-                document.documentElement.style.setProperty('--secondary-color', lightSecondaryColor);
-                document.documentElement.style.setProperty('--font-color-shade', lightFontColorShade);
-                document.documentElement.style.setProperty('--font-color', lightFontColor);
-               
-                localStorage.setItem('theme', 'light');
-            } else if (theme === 'dark') {
-                let darkPrimaryColor = getComputedStyle(document.documentElement).getPropertyValue('--dark-primary-color');
-                let darkSecondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--dark-secondary-color');
-                let darkFontColorShade = getComputedStyle(document.documentElement).getPropertyValue('--dark-font-color-shade');
-                let darkFontColor = getComputedStyle(document.documentElement).getPropertyValue('--dark-font-color');
-                
-                document.documentElement.style.setProperty('--primary-color', darkPrimaryColor);
-                document.documentElement.style.setProperty('--secondary-color', darkSecondaryColor);
-                document.documentElement.style.setProperty('--font-color-shade', darkFontColorShade);
-                document.documentElement.style.setProperty('--font-color', darkFontColor);
-                localStorage.setItem('theme', 'dark');
-            } 
+        if (mobileMenuToggle && navBackdrop) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+                mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+                mobileMenuToggle.classList.toggle('active');
+                navigation.classList.toggle('active');
+                navBackdrop.classList.toggle('active');
+            });
+
+            // Close menu when clicking backdrop
+            navBackdrop.addEventListener('click', () => {
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                mobileMenuToggle.classList.remove('active');
+                navigation.classList.remove('active');
+                navBackdrop.classList.remove('active');
+            });
+
+            // Close menu when clicking nav item
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileMenuToggle.classList.remove('active');
+                    navigation.classList.remove('active');
+                    navBackdrop.classList.remove('active');
+                });
+            });
         }
 
-        const savedTheme = localStorage.getItem('theme');
-        let s = document.querySelector('#theme')
-        if (savedTheme === 'light') {
-            setTheme('light');
-            s.innerHTML = '<i class="fa-solid fa-moon"></i>Dark'
-        } else if (savedTheme === 'dark') {
-            setTheme('dark');
-            s.innerHTML = '<i class="fa-solid fa-sun"></i>Light'
-        } 
-        
-        s.addEventListener('click',()=>{
-            const savedTheme1 = localStorage.getItem('theme');
-            if (savedTheme1){
-                if (savedTheme1 == 'light'){
-                    setTheme('dark')
-                    s.innerHTML = '<i class="fa-solid fa-sun"></i>Light'
-                    
-                }else if(savedTheme1=='dark'){
-                    setTheme('light')
-                    s.innerHTML = '<i class="fa-solid fa-moon"></i>Dark'
-                }
-            }else{
-                setTheme('dark')
-                s.innerHTML = '<i class="fa-solid fa-sun"></i>Light'
-            }
+        // Scroll Progress Bar
+        if (progressBar) {
+            window.addEventListener('scroll', () => {
+                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (window.pageYOffset / windowHeight) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+        }
 
-        })
+        // Navbar Scroll Shrink Effect
+        if (navbar) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 100) {
+                    navbar.classList.add('navbar-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                }
+            });
+        }
     </script>
 </body>
 </html>

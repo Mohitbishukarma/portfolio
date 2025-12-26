@@ -11,227 +11,442 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/028c27c31f.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <h2>Mohit <span>BK.</span></h2>
-            <ul class="navigation">
-                <a class="nav-item active" href="#project"><li>Projects</li></a>
-                <a class="nav-item" href="./blog.html"><li>Blog <i class="fa-solid fa-up-right-from-square"></i></li></a>
-                <a class="nav-item" href="#about-me"><li>About Me</li></a>
-                
-                <button id="theme"><i class="fa-solid fa-moon"></i>Dark</button>
+    <!-- Navigation backdrop for mobile -->
+    <div class="nav-backdrop"></div>
 
-                </div>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Site header with navbar only -->
+    <header class="site-header">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <h2 aria-label="Home">Mohit <span>BK.</span></h2>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="navigation">
+                <li><a class="nav-item active" href="#hero">Home</a></li>
+                <li><a class="nav-item" href="#projects">Projects</a></li>
+                <li><a class="nav-item" href="./blog.html">Blog <i class="fa-solid fa-up-right-from-square"></i></a></li>
+                <li><a class="nav-item" href="#about-me">About</a></li>
+                <li><a class="nav-item" href="#contact-me">Contact</a></li>
             </ul>
         </nav>
-        <section id="hero" >
-            <div class="hero-left">
-                <p class="hero-name">Mohit BK</p>
-                <h3>Hi there,<br>I'm a full stack Web Developer</h3>
-                <p class="description">My name is Mohit BK. I am a student of +2 science. I love to play with technology. I have the knowledge of coding in python, JavaScript, c, html , css. I love to learn new things in technology. My tech field is python Django Development.</p>
-                <div class="hero-cta">
-                    <a class="cta hire-me-cta" href="#contact-me">Hire Me</a>
-                    <a class="cta download-resume-cta" href="#">Download Resume</a>
-                </div>
-            </div>
-            <div class="hero-right">
-                <img src="./images/mohit bk.png" alt="Mohit BK">
-            </div>
-        </section>
     </header>
 
-    <!-- project -->
-    <section id="project">
-        <h2 class="section-title">My Projects</h2>
-        <div class="projects">
+    <!-- Main content wrapper -->
+    <main id="main-content" class="main-content">
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section" aria-label="Introduction">
+            <!-- Animated background particles -->
+            <div class="hero-particles" aria-hidden="true">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+
+            <div class="hero-left">
+                <p class="hero-name">Mohit BK</p>
+                <h1>Hi, I'm a <span class="typing-text">Python Developer</span></h1>
+                <p class="description">I specialize in building robust web applications with Python and Django, while also providing expert networking solutions and CCTV installations. Combining software development with hardware expertise to deliver comprehensive technical solutions.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="cta primary-cta">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#contact-me" class="cta secondary-cta">Contact Me <i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="image-wrapper">
+                    <div class="image-ring ring-1"></div>
+                    <div class="image-ring ring-2"></div>
+                    <div class="image-ring ring-3"></div>
+                    <img src="./images/mohit-bk.png" alt="Mohit BK - Python Developer and Network Specialist">
+                </div>
+            </div>
+        </section>
+
+    <!-- SVG Gradients for Skills -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="gradient-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00F0FF;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#B026FF;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section" aria-labelledby="projects-heading">
+            <h2 id="projects-heading" class="section-title">My Projects</h2>
+            <div class="projects-grid">
             <div class="project">
                 <div class="project-top">
-                    <img src="./images/project0img.png" alt="#">
+                    <img src="./images/project0img.png" alt="E-Commerce Platform">
                 </div>
                 <div class="project-body">
-                    <h3 class="project-name">Weather app</h3>
-                    <p class="project-description">This weather app is built with html,css,
-                        js as frontend technology and Django
-                        as back end and Sqlite as database.
-                        This web app shows the real-time 
-                        weather condition of your current
-                        location.</p>
-                        <a class="cta go-to-project-cta" href="#">Go to project&nbsp;&nbsp; <i class="fa-solid fa-up-right-from-square"></i>    </a>
+                    <h3 class="project-name">E-Commerce Platform</h3>
+                    <p class="project-description">Full-featured online store with payment integration, inventory management, and comprehensive admin dashboard built with Django.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Stripe</span>
+                    </div>
+                    <a class="cta go-to-project-cta" href="#">View Project <i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
             <div class="project">
                 <div class="project-top">
-                    <img src="./images/project0img.png" alt="#">
+                    <img src="./images/project0img.png" alt="Network Monitoring Dashboard">
                 </div>
                 <div class="project-body">
-                    <h3 class="project-name">Weather app</h3>
-                    <p class="project-description">This weather app is built with html,css,
-                        js as frontend technology and Django
-                        as back end and Sqlite as database.
-                        This web app shows the real-time 
-                        weather condition of your current
-                        location.</p>
-                        <a class="cta go-to-project-cta" href="#">Go to project <i class="fa-solid fa-up-right-from-square"></i>    </a>
+                    <h3 class="project-name">Network Monitoring Dashboard</h3>
+                    <p class="project-description">Real-time network analytics and alerting system with intuitive visualization and automated reporting.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Real-time Analytics</span>
+                        <span class="tech-tag">WebSockets</span>
+                    </div>
+                    <a class="cta go-to-project-cta" href="#">View Project <i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
             <div class="project">
                 <div class="project-top">
-                    <img src="./images/project0img.png" alt="#">
+                    <img src="./images/project0img.png" alt="CCTV Management System">
                 </div>
                 <div class="project-body">
-                    <h3 class="project-name">Weather app</h3>
-                    <p class="project-description">This weather app is built with html,css,
-                        js as frontend technology and Django
-                        as back end and Sqlite as database.
-                        This web app shows the real-time 
-                        weather condition of your current
-                        location.</p>
-                        <a class="cta go-to-project-cta" href="#">Go to project <i class="fa-solid fa-up-right-from-square"></i>    </a>
+                    <h3 class="project-name">CCTV Management System</h3>
+                    <p class="project-description">Centralized security camera management with remote access, recording schedules, and multi-site support.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Networking</span>
+                        <span class="tech-tag">NVR/DVR</span>
+                        <span class="tech-tag">IP Cameras</span>
+                    </div>
+                    <a class="cta go-to-project-cta" href="#">View Project <i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
             <div class="project">
                 <div class="project-top">
-                    <img src="./images/project0img.png" alt="#">
+                    <img src="./images/project0img.png" alt="Portfolio Website">
                 </div>
                 <div class="project-body">
-                    <h3 class="project-name">Weather app</h3>
-                    <p class="project-description">This weather app is built with html,css,
-                        js as frontend technology and Django
-                        as back end and Sqlite as database.
-                        This w.</p>
-                        <a class="cta go-to-project-cta" href="#">Go to project <i class="fa-solid fa-up-right-from-square"></i>    </a>
+                    <h3 class="project-name">Portfolio Website</h3>
+                    <p class="project-description">Modern, responsive portfolio with blog functionality and contact form integration.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">FormSpree</span>
+                    </div>
+                    <a class="cta go-to-project-cta" href="#">View Project <i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
             <div class="project">
                 <div class="project-top">
-                    <img src="./images/project0img.png" alt="#">
+                    <img src="./images/project0img.png" alt="API Integration Service">
                 </div>
                 <div class="project-body">
-                    <h3 class="project-name">Weather app</h3>
-                    <p class="project-description">This weather app is built with html,css,
-                        js as frontend technology and Django
-                        as back end and Sqlite as database.
-                        This web app shows the real-time 
-                        weather condition of your current
-                        location.</p>
-                        <a class="cta go-to-project-cta" href="#">Go to project <i class="fa-solid fa-up-right-from-square"></i>    </a>
+                    <h3 class="project-name">API Integration Service</h3>
+                    <p class="project-description">RESTful API service connecting multiple third-party platforms with authentication and rate limiting.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Django REST</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Redis</span>
+                    </div>
+                    <a class="cta go-to-project-cta" href="#">View Project <i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
             <div class="project">
                 <div class="project-top">
-                    <img src="./images/project0img.png" alt="#">
+                    <img src="./images/project0img.png" alt="Security Camera Network">
                 </div>
                 <div class="project-body">
-                    <h3 class="project-name">Weather app</h3>
-                    <p class="project-description">This weather app is built with html,css,
-                        js as frontend technology and Django
-                        as back end and Sqlite as database.
-                        This web app shows the real-time 
-                        weather condition of your current
-                        location.</p>
-                        <a class="cta go-to-project-cta" href="#">Go to project <i class="fa-solid fa-up-right-from-square"></i>    </a>
+                    <h3 class="project-name">Security Camera Network</h3>
+                    <p class="project-description">Enterprise surveillance system with 50+ cameras, failover redundancy, and cloud backup.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">CCTV</span>
+                        <span class="tech-tag">Networking</span>
+                        <span class="tech-tag">Configuration</span>
+                    </div>
+                    <a class="cta go-to-project-cta" href="#">View Project <i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
            
         </div>
     </section>
     <!-- project close -->
-    <!-- about me -->
-    <section id="about-me">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-me-container">
-            <img class="profile-pic" src="./images/mohit bk. bgjfif.png" alt="">
-            <h3 class="about-name">Mohit BK</h3>
-            <p class="about-description">My name is Mohit BK. I am a student of +2 science. I love to play with technology.
-                I have the knowledge of coding in python, JavaScript, c, html , css. I love to
-                learn new things in technology. My tech field is python
-                Django Development.</p>
+        <!-- About Me Section -->
+        <section id="about-me" class="about-section" aria-labelledby="about-heading">
+            <h2 id="about-heading" class="section-title">About Me</h2>
 
+        <!-- About Me Grid -->
+        <div class="about-me-container">
+            <div class="about-left">
+                <img class="profile-pic" src="./images/DSC_1286 copy.jpg" alt="Mohit BK - Python Developer">
+            </div>
+            <div class="about-right">
+                <h3 class="about-name">Mohit BK</h3>
+                <p class="about-description">A passionate technologist with expertise spanning both software and hardware domains. I build scalable web applications using Python and Django, design and implement secure network infrastructures, and deploy professional CCTV systems. My unique combination of programming and networking skills allows me to create end-to-end solutions that bridge the digital and physical worlds.</p>
+
+                <div class="why-work-with-me">
+                    <h3>Why Work With Me</h3>
+                    <ul>
+                        <li>Full-stack Python/Django development expertise</li>
+                        <li>Network architecture and security implementation</li>
+                        <li>Professional CCTV installation and configuration</li>
+                        <li>End-to-end project delivery</li>
+                        <li>Commitment to quality and best practices</li>
+                    </ul>
+                </div>
+            </div>
         </div>
+
+        <!-- Stats Section -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number" data-target="3">0+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="25">0+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="20">0+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
         <div class="skill-container">
             <h2>Skills</h2>
-            <div class="skill">
-                <p class="skill-name" style="color: #dd0e0e;">HTML - 90%</p>
-                <div class="skill-bar">
-                    <div class="bar" data="90" style="background-color: #dd0e0e;"></div>
-                    <div class="skill-percentage"></div>
+            <div class="skills-grid">
+                <!-- Skill 1: Python Programming -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <div class="skill-progress">
+                        <svg width="120" height="120">
+                            <circle class="bg-circle" cx="60" cy="60" r="54"></circle>
+                            <circle class="progress-circle" cx="60" cy="60" r="54" data-percentage="85"></circle>
+                        </svg>
+                        <div class="progress-value">85%</div>
+                    </div>
+                    <h3 class="skill-name">Python Programming</h3>
+                    <p class="skill-description">Backend development, automation, scripting</p>
                 </div>
-            </div>
-            <div class="skill">
-                <p class="skill-name" style="color: #0a6902;">Python - 80%</p>
-                <div class="skill-bar">
-                    <div class="bar" data="60" style="background-color: #0a6902;"></div>
-                    <div class="skill-percentage"></div>
+
+                <!-- Skill 2: Django Web Development -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div class="skill-progress">
+                        <svg width="120" height="120">
+                            <circle class="bg-circle" cx="60" cy="60" r="54"></circle>
+                            <circle class="progress-circle" cx="60" cy="60" r="54" data-percentage="80"></circle>
+                        </svg>
+                        <div class="progress-value">80%</div>
+                    </div>
+                    <h3 class="skill-name">Django Web Development</h3>
+                    <p class="skill-description">Full-stack web applications, REST APIs</p>
                 </div>
-            </div>
-            <div class="skill">
-                <p class="skill-name" style="color: #110edd;">CSS - 50%</p>
-                <div class="skill-bar">
-                    <div class="bar" data="40" style="background-color: #110edd;"></div>
-                    <div class="skill-percentage"></div>
+
+                <!-- Skill 3: Web Programming -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div class="skill-progress">
+                        <svg width="120" height="120">
+                            <circle class="bg-circle" cx="60" cy="60" r="54"></circle>
+                            <circle class="progress-circle" cx="60" cy="60" r="54" data-percentage="75"></circle>
+                        </svg>
+                        <div class="progress-value">75%</div>
+                    </div>
+                    <h3 class="skill-name">Web Programming</h3>
+                    <p class="skill-description">HTML, CSS, JavaScript, responsive design</p>
                 </div>
-            </div>
-            <div class="skill">
-                <p class="skill-name" style="color: #cef729;">JavaScript - 60%</p>
-                <div class="skill-bar">
-                    <div class="bar" data="70" style="background-color: #cef729;"></div>
-                    <div class="skill-percentage"></div>
+
+                <!-- Skill 4: Networking -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <div class="skill-progress">
+                        <svg width="120" height="120">
+                            <circle class="bg-circle" cx="60" cy="60" r="54"></circle>
+                            <circle class="progress-circle" cx="60" cy="60" r="54" data-percentage="80"></circle>
+                        </svg>
+                        <div class="progress-value">80%</div>
+                    </div>
+                    <h3 class="skill-name">Networking</h3>
+                    <p class="skill-description">Network design, configuration, security</p>
                 </div>
-            </div>
-            <div class="skill">
-                <p class="skill-name" style="color: #0bf36f;">Django - 70%</p>
-                <div class="skill-bar">
-                    <div class="bar" data="60" style="background-color: #0bf36f;"></div>
-                    <div class="skill-percentage"></div>
+
+                <!-- Skill 5: CCTV Networking/Installing -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <div class="skill-progress">
+                        <svg width="120" height="120">
+                            <circle class="bg-circle" cx="60" cy="60" r="54"></circle>
+                            <circle class="progress-circle" cx="60" cy="60" r="54" data-percentage="85"></circle>
+                        </svg>
+                        <div class="progress-value">85%</div>
+                    </div>
+                    <h3 class="skill-name">CCTV Networking/Installing</h3>
+                    <p class="skill-description">Camera systems, NVR/DVR setup, monitoring</p>
                 </div>
             </div>
         </div>
     </section>
     <!-- about me close -->
-    <!-- contact me -->
-    <section id="contact-me">
-        <h2 class="section-title">contact me</h2>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-heading">
+            <h2 id="testimonials-heading" class="section-title">What Clients Say</h2>
+        <div class="testimonials-carousel">
+            <div class="testimonials-wrapper">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <p class="testimonial-quote">Mohit delivered an exceptional e-commerce platform for our business. His Django expertise and attention to detail resulted in a fast, secure website that exceeded our expectations.</p>
+                        <div class="testimonial-author">
+                            <h4 class="author-name">Sarah Johnson</h4>
+                            <p class="author-position">CEO</p>
+                            <p class="author-company">TechMart Solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-quote">The network infrastructure Mohit designed for our office has been flawless. He completed the setup efficiently and provided excellent documentation.</p>
+                        <div class="testimonial-author">
+                            <h4 class="author-name">Michael Chen</h4>
+                            <p class="author-position">IT Manager</p>
+                            <p class="author-company">CloudCore Inc</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-quote">Professional CCTV installation with perfect camera placement and network integration. Mohit's dual expertise in networking and security systems is invaluable.</p>
+                        <div class="testimonial-author">
+                            <h4 class="author-name">Priya Sharma</h4>
+                            <p class="author-position">Operations Director</p>
+                            <p class="author-company">SecureSpace</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-quote">Outstanding work on our Django-based API service. Mohit's code quality and problem-solving skills made the entire development process smooth.</p>
+                        <div class="testimonial-author">
+                            <h4 class="author-name">David Martinez</h4>
+                            <p class="author-position">CTO</p>
+                            <p class="author-company">DataFlow Systems</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Navigation -->
+            <div class="carousel-nav">
+                <button class="carousel-btn prev" aria-label="Previous testimonial">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active"></span>
+                    <span class="carousel-dot"></span>
+                    <span class="carousel-dot"></span>
+                    <span class="carousel-dot"></span>
+                </div>
+                <button class="carousel-btn next" aria-label="Next testimonial">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- testimonials close -->
+
+        <!-- Contact Section -->
+        <section id="contact-me" class="contact-section" aria-labelledby="contact-heading">
+            <h2 id="contact-heading" class="section-title">Get In Touch</h2>
         <div class="contact-box">
-            <img src="./images/mohit bk. bgjfif.png" alt="">
             <div class="contact-form">
-                <form action="#" method="get">
-                    <div class="field-container">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="name" placeholder="enter your name" required >
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contact-form">
+                    <!-- Hidden fields for FormSpree -->
+                    <input type="hidden" name="_subject" value="New Portfolio Contact">
+                    <input type="text" name="_gotcha" style="display:none">
+
+                    <div class="form-field">
+                        <input type="text" name="name" id="name" placeholder=" " required>
+                        <label for="name">Your Name</label>
                     </div>
-                    <div class="field-container">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" placeholder="enter your email addres">
+
+                    <div class="form-field">
+                        <input type="email" name="email" id="email" placeholder=" " required>
+                        <label for="email">Your Email</label>
                     </div>
-                    <div class="field-container">
-                        <label for="message">Message</label>
-                        <textarea name="message" id="message" placeholder="write your message here..."></textarea>
+
+                    <div class="form-field">
+                        <textarea name="message" id="message" placeholder=" " required></textarea>
+                        <label for="message">Your Message</label>
                     </div>
-                    <button class="cta contact-form-submit">Submit <i class="far fa-paper-plane"></i></button>
+
+                    <button type="submit" class="contact-form-submit">
+                        Send Message <i class="fas fa-paper-plane"></i>
+                    </button>
+
+                    <div class="form-status"></div>
                 </form>
             </div>
 
+            <div class="contact-info">
+                <h3>Let's Work Together</h3>
+                <p>Have a project in mind? Whether it's web development, network setup, or CCTV installation, I'm here to help bring your ideas to life.</p>
+                <p>Get in touch and let's discuss how we can work together to create something amazing.</p>
+            </div>
         </div>
+
         <div class="social-media-handle">
-            <a href="#"><img src="./images/fb-logo.png" alt=""></a>
-            <a href="#"><img src="./images/insta-logo.png" alt=""></a>
-            <a href="#"><img src="./images/linked-in-logo.png" alt=""></a>
-            <a href="#"><img src="./images/twitter-logo.png" alt=""></a>
-            <a href="#"><img src="./images/whatsapp-logo.png" alt=""></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
     </section>
-
     <!-- contact me close -->
-    <!-- footer -->
 
+    </main>
+    <!-- End of main content -->
+
+    <!-- Footer -->
     <hr class="footer-hr">
-    <footer>
-        <div class="social-media">
+    <footer class="site-footer" role="contentinfo">
+        <div class="social-icons" aria-label="Social media links">
             <a href="#"><i class="fab fa-facebook"></i>
                 </a>
             <a href="#"><i class="fab fa-linkedin"></i>
@@ -244,89 +459,8 @@
         <p>@Copyright all rights reserved</p>
     </footer>
     <!-- footer close -->
-    
 
-    <script>
-
-        if(window.innerWidth > 768){
-        let navbar = document.querySelector('.navbar').getBoundingClientRect().height
-        let hero = document.querySelector('#hero')
-        let header = document.querySelector('header').getBoundingClientRect().height
-        hero.style.height =  `${header - navbar}px`
-        }
-
-
-        function setTheme(theme) {
-            if (theme === 'light') {
-                let lightPrimaryColor = getComputedStyle(document.documentElement).getPropertyValue('--light-primary-color');
-                let lightSecondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--light-secondary-color');
-                let lightFontColorShade = getComputedStyle(document.documentElement).getPropertyValue('--light-font-color-shade');
-                let lightFontColor = getComputedStyle(document.documentElement).getPropertyValue('--light-font-color');
-                
-                document.documentElement.style.setProperty('--primary-color', lightPrimaryColor);
-                document.documentElement.style.setProperty('--secondary-color', lightSecondaryColor);
-                document.documentElement.style.setProperty('--font-color-shade', lightFontColorShade);
-                document.documentElement.style.setProperty('--font-color', lightFontColor);
-               
-                localStorage.setItem('theme', 'light');
-            } else if (theme === 'dark') {
-                let darkPrimaryColor = getComputedStyle(document.documentElement).getPropertyValue('--dark-primary-color');
-                let darkSecondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--dark-secondary-color');
-                let darkFontColorShade = getComputedStyle(document.documentElement).getPropertyValue('--dark-font-color-shade');
-                let darkFontColor = getComputedStyle(document.documentElement).getPropertyValue('--dark-font-color');
-                
-                document.documentElement.style.setProperty('--primary-color', darkPrimaryColor);
-                document.documentElement.style.setProperty('--secondary-color', darkSecondaryColor);
-                document.documentElement.style.setProperty('--font-color-shade', darkFontColorShade);
-                document.documentElement.style.setProperty('--font-color', darkFontColor);
-                localStorage.setItem('theme', 'dark');
-            } 
-        }
-
-        const savedTheme = localStorage.getItem('theme');
-        let s = document.querySelector('#theme')
-        if (savedTheme === 'light') {
-            setTheme('light');
-            s.innerHTML = '<i class="fa-solid fa-moon"></i>Dark'
-        } else if (savedTheme === 'dark') {
-            setTheme('dark');
-            s.innerHTML = '<i class="fa-solid fa-sun"></i>Light'
-        } 
-        
-        s.addEventListener('click',()=>{
-            const savedTheme1 = localStorage.getItem('theme');
-            if (savedTheme1){
-                if (savedTheme1 == 'light'){
-                    setTheme('dark')
-                    s.innerHTML = '<i class="fa-solid fa-sun"></i>Light'
-                    
-                }else if(savedTheme1=='dark'){
-                    setTheme('light')
-                    s.innerHTML = '<i class="fa-solid fa-moon"></i>Dark'
-                }
-            }else{
-                setTheme('dark')
-                s.innerHTML = '<i class="fa-solid fa-sun"></i>Light'
-            }
-
-        })
-
-
-        // skill animations
-        
-        let bars = document.querySelectorAll('.bar')
-        let full_bars = document.querySelectorAll('.skill-bar')
-        let bar_width = 0
-        let data_percentage = 0
-        for (let i=0;i<bars.length;i++){
-            let bar = bars[i]
-            let full_bar = full_bars[i].getBoundingClientRect().width
-            data_percentage = Number(bar.getAttribute('data'))
-            console.log(data_percentage)
-            bar_width =  full_bar * data_percentage/100
-            bar.style.width = `${bar_width}px`
-        }
-        
-    </script>
+    <!-- Main JavaScript -->
+    <script src="./js/main.js"></script>
 </body>
 </html>

@@ -6,214 +6,43 @@
     <title>Blog Detailed View - Mohit BK</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/028c27c31f.js" crossorigin="anonymous"></script>
-    <style>
-        @import"https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap";
-
-/* css conf */
-:root{
-    --primary-color: #fff;
-    --secondary-color: #31DAA7;
-    --secondary-color-shade: #93e8ce;
-    --black-color:#101010;
-    --main-padding: 30rem;
-    --font-color:#000;
-    --font-color-shade:#5A5A5A;
-    --section-padding: 35rem;
-  
-    --light-secondary-color:#31daa7;
-    --light-font-color-shade:#5a5a5a;
-    --light-primary-color:#fff;
-    --light-font-color:#000;
-    --dark-primary-color:#1b1b1b;
-    --dark-secondary-color: #31daa3;
-    --dark-font-color:#fff;
-    --dark-font-color-shade:#ededed;
-  }
-  
-  *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    line-height: 1.9em;
-    scroll-behavior: smooth;
-  }
-  
-  html{
-    font-size: 62.5%;
-  }
-  
-  a{
-    text-decoration: none;
-  }
-  
-  li{
-    list-style-type: none;
-  }
-  
-  body{
-    background-color: var(--primary-color);
-    color: var(--font-color);
-  }
-  
-  .section-title{
-    font-size: 3rem;
-    font-weight:500;
-    color: var(--font-color-shade);
-    text-transform: uppercase;
-    border-bottom: 4px solid var(--secondary-color);
-    width: fit-content;
-    margin-bottom: 4rem;
-  }
-  
-  
-  /* main styling */
-  /* navbar */
-  header{
-    font-family: "Poppins", sans-serif;
-    height: fit-content;
-  }
-  
-  .navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:20px var(--main-padding);
-    color: var(--font-color);
-  }
-  
-  .navbar h2{
-    font-size: 4rem;
-    font-weight:600;
-    letter-spacing: 2%;
-  }
-  
-  .navbar h2 span{
-    color: var(--secondary-color);
-  }
-  .navbar ul{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .navbar .nav-item{
-    padding: 5px 2rem;
-    border-radius: 10px;
-    color: var(--font-color);
-    font-size: 2rem;
-    font-weight: 500;
-  }
-  
-  .navbar .nav-item:hover{
-    background-color: var(--secondary-color-shade);
-    color: #fff;
-  }
-  
-  .nav-item.active{
-    background-color: var(--secondary-color);
-    color: #fff;
-  }
-
-  #theme{
-    border: none;
-    outline: none;
-    background: none;
-    padding: 5px 2rem;
-    border-radius: 10px;
-    color: var(--font-color);
-    font-size: 2rem;
-    font-weight: 500;
-  }
-  
-  #theme i{
-    margin-right: 1rem;
-  }
-
-
-  main{
-    margin-top: 4rem;
-    display: flex;
-    flex-direction: column;
-    padding: 0 var(--section-padding);
-    margin-bottom: 2rem;
-    font-family: 'Readex Pro';
-  }
-
-
-  main .featured-img img{
-    width: 100%;
-    height: auto;
-  }
-
-
-  main .author{
-    font-size: 1.5rem;
-    font-weight: 600;
-    font-family: 'Readex Pro';
-    margin-top: 1rem;
-  }
-
-  main .published-date{
-    font-size: 1.5rem;
-    font-family: 'Readex Pro';
-    font-weight: 300;
-    margin-top: 2rem;
-  }
-
-  main .blog-title{
-    font-size: 3rem;
-    margin-top: 2rem;
-  }
-
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    :root{
-      --main-padding:1rem;
-      --section-padding: 1rem;
-    }
-    html{
-      font-size: 55%;
-    }
-  
-    .navbar{
-      flex-direction: column;
-    }
-  
-    header{
-      height: fit-content;
-    }
-  
-  }
-  
-  @media (max-width:468px){
-    html{
-      font-size: 45%;
-    }
-  }
-
-    </style>
+    <link rel="stylesheet" href="./css/blog.css">
 
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <h2>Mohit <span>BK.</span></h2>
+    <!-- Navigation backdrop for mobile -->
+    <div class="nav-backdrop"></div>
+
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Site header with navbar only -->
+    <header class="site-header">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <h2 aria-label="Home">Mohit <span>BK.</span></h2>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <ul class="navigation">
-                <a class="nav-item" href="./index.html"><li>Portfolio</li></a>
-                <button id="theme"><i class="fa-solid fa-moon"></i>Dark</button>
+                <li><a class="nav-item" href="./index.html">Portfolio</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+
+    <!-- Main content wrapper -->
+    <main id="main-content" class="main-content">
         <div class="featured-img">
             <img src="https://www.dennisivy.com/images/cbv.png" alt="#">
         </div>
         <p class="author">By Mohit BK</p>
         <div><p class="published-date">📆 Posted on 2021-5-10</p></div>
-        <h1 class="blog-title">Why ues Django as backend tech? Dp ypu really want to do this</h1>
+        <h1 class="blog-title">Why use Django as backend tech? Do you really want to do this</h1>
         <div class="content">
             If you watch any of my tutorials on youtube then you probably noticed I use function based views in most of my videos, there’s a specific reason for that. For the record, I’m not against class based views. I just prefer to use function based views in tutorials because they are much easier to understand and remove a certain learning curve.
 
@@ -336,61 +165,61 @@ It wasn’t long before I aborted the mission and switched back to function base
     </main>
 
     <script>
+        // Mobile Menu Toggle with Backdrop and ARIA
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navigation = document.querySelector('.navigation');
+        const navBackdrop = document.querySelector('.nav-backdrop');
+        const navItems = document.querySelectorAll('.nav-item');
+        const progressBar = document.querySelector('.scroll-progress-bar');
+        const navbar = document.querySelector('.navbar');
 
-        function setTheme(theme) {
-            if (theme === 'light') {
-                let lightPrimaryColor = getComputedStyle(document.documentElement).getPropertyValue('--light-primary-color');
-                let lightSecondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--light-secondary-color');
-                let lightFontColorShade = getComputedStyle(document.documentElement).getPropertyValue('--light-font-color-shade');
-                let lightFontColor = getComputedStyle(document.documentElement).getPropertyValue('--light-font-color');
-                
-                document.documentElement.style.setProperty('--primary-color', lightPrimaryColor);
-                document.documentElement.style.setProperty('--secondary-color', lightSecondaryColor);
-                document.documentElement.style.setProperty('--font-color-shade', lightFontColorShade);
-                document.documentElement.style.setProperty('--font-color', lightFontColor);
-               
-                localStorage.setItem('theme', 'light');
-            } else if (theme === 'dark') {
-                let darkPrimaryColor = getComputedStyle(document.documentElement).getPropertyValue('--dark-primary-color');
-                let darkSecondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--dark-secondary-color');
-                let darkFontColorShade = getComputedStyle(document.documentElement).getPropertyValue('--dark-font-color-shade');
-                let darkFontColor = getComputedStyle(document.documentElement).getPropertyValue('--dark-font-color');
-                
-                document.documentElement.style.setProperty('--primary-color', darkPrimaryColor);
-                document.documentElement.style.setProperty('--secondary-color', darkSecondaryColor);
-                document.documentElement.style.setProperty('--font-color-shade', darkFontColorShade);
-                document.documentElement.style.setProperty('--font-color', darkFontColor);
-                localStorage.setItem('theme', 'dark');
-            } 
+        if (mobileMenuToggle && navBackdrop) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+                mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+                mobileMenuToggle.classList.toggle('active');
+                navigation.classList.toggle('active');
+                navBackdrop.classList.toggle('active');
+            });
+
+            // Close menu when clicking backdrop
+            navBackdrop.addEventListener('click', () => {
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                mobileMenuToggle.classList.remove('active');
+                navigation.classList.remove('active');
+                navBackdrop.classList.remove('active');
+            });
+
+            // Close menu when clicking nav item
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileMenuToggle.classList.remove('active');
+                    navigation.classList.remove('active');
+                    navBackdrop.classList.remove('active');
+                });
+            });
         }
 
-        const savedTheme = localStorage.getItem('theme');
-        let s = document.querySelector('#theme')
-        if (savedTheme === 'light') {
-            setTheme('light');
-            s.innerHTML = '<i class="fa-solid fa-moon"></i>Dark'
-        } else if (savedTheme === 'dark') {
-            setTheme('dark');
-            s.innerHTML = '<i class="fa-solid fa-sun"></i>Light'
-        } 
-        
-        s.addEventListener('click',()=>{
-            const savedTheme1 = localStorage.getItem('theme');
-            if (savedTheme1){
-                if (savedTheme1 == 'light'){
-                    setTheme('dark')
-                    s.innerHTML = '<i class="fa-solid fa-sun"></i>Light'
-                    
-                }else if(savedTheme1=='dark'){
-                    setTheme('light')
-                    s.innerHTML = '<i class="fa-solid fa-moon"></i>Dark'
-                }
-            }else{
-                setTheme('dark')
-                s.innerHTML = '<i class="fa-solid fa-sun"></i>Light'
-            }
+        // Scroll Progress Bar
+        if (progressBar) {
+            window.addEventListener('scroll', () => {
+                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (window.pageYOffset / windowHeight) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+        }
 
-        })
+        // Navbar Scroll Shrink Effect
+        if (navbar) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 100) {
+                    navbar.classList.add('navbar-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                }
+            });
+        }
     </script>
 </body>
 </html>
